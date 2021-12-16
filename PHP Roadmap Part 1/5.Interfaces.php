@@ -17,38 +17,53 @@ interface BeispielInterface {
 
 interface tier {
     public function mach_ein_laut();
+    public function __construct($gewicht);
 }
-
 class Katze implements tier {
+    public $gewicht;
+    public function __construct($gewicht){
+        $this->gewicht = $gewicht;
+    }
     public function mach_ein_laut()
     {
         echo "MEOWWW MEOOOW";
     }
 }
 class Hund implements tier {
+    public $gewicht;
+    public function __construct($gewicht){
+        $this->gewicht = $gewicht;
+    }
     public function mach_ein_laut()
     {
        echo "WAU WAU";
     }
 }
 class Elefant implements tier {
+    public $gewicht;
+    public function __construct($gewicht){
+        $this->gewicht = $gewicht;
+    }
     public function mach_ein_laut()
     {
         echo "GRUUAU GRAUU ";
     }
 }
-
 class Loewe implements tier {
+    public $gewicht;
+    public function __construct($gewicht){
+        $this->gewicht = $gewicht;
+    }
     public function mach_ein_laut()
     {
         echo "RAWWWW RAWWW";
     }
 }
 // Tiere erstellen
-$miez = new Katze();
-$doggy = new Hund();
-$peter = new Elefant();
-$hanz = new Loewe();
+$miez = new Katze("10kg");
+$doggy = new Hund("20kg");
+$peter = new Elefant("100kg");
+$hanz = new Loewe("30kg");
 
 // Banales Beispiel oben
 // Zum Beispiel wir möchten eine Software schreiben die eine Gruppe von mehreren Tieren verwaltet
@@ -61,5 +76,22 @@ echo "<hr>Loooooooop<hr>";
 $tiere = array($miez, $doggy, $hanz, $peter);
 foreach ($tiere as $item){
     $item->mach_ein_laut();
+    echo $item->gewicht;
+    echo "<br>";
+}
+
+////////////
+echo "<br><hr>";
+echo "Neues Tier erstellen<br>";
+
+$jacky = new Katze("5.8kg");
+$lucy = new Katze("4.5kg");
+$charly = new Katze("5kg");
+
+$katzen = array($jacky, $lucy, $charly);
+
+foreach ($katzen as $katze){
+    $katze->mach_ein_laut();
+    echo $katze->gewicht;
     echo "<br>";
 }
