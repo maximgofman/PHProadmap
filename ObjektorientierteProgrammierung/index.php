@@ -44,7 +44,7 @@ $banana->get_information();
 
 //Klasse erstellen
 class Fruit {
-    public $name;
+    public string $name;
     public $weight;
     public $color;
 
@@ -54,10 +54,10 @@ class Fruit {
         $this->weight = $weight;
     }
     function get_information(){
-        echo "Die Frucht ".$this->name." hat die Farbe ".$this->color." und wiegt ".$this->weight;
+       return  "Die Frucht ".$this->name." hat die Farbe ".$this->color." und wiegt ".$this->weight;
     }
 }
-
+echo $banana->get_information();
 /* Mit public $name etc. sagen wir das die Variable auch außerhalb der Klasse aufgerufen werden kann.
 mit private oder protected kann die Funktion nur in der Klasse aufgerufen und verarbeitet werden
 mehr dazu unter PHP Extras/ Private Public Protectec.php */
